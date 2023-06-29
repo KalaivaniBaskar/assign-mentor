@@ -1,27 +1,27 @@
 Write API to create Mentor
-/mentors/add
+https://assign-mentor-1ikw.onrender.com/app/mentors/add
 
-/mentors/all
+https://assign-mentor-1ikw.onrender.com/app/mentors/all
 
 Write API to create Student
-/students/add
+https://assign-mentor-1ikw.onrender.com/app/students/add
 
-/students/all
+https://assign-mentor-1ikw.onrender.com/app/students/all
 
 Write API to Assign a student to Mentor
 Select one mentor and Add multiple Student 
-/mentors/edit/:id
+https://assign-mentor-1ikw.onrender.com/app/mentors/edit/:id
 
 A student who has a mentor should not be shown in List
-/students/all/unassigned
+https://assign-mentor-1ikw.onrender.com/app/students/all/unassigned
 
 Write API to Assign or Change Mentor for particular Student
 Select One Student and Assign one Mentor
-/students/edit/:id
-/mentors/edit-mentee/:id
+https://assign-mentor-1ikw.onrender.com/app/students/edit/:id
+https://assign-mentor-1ikw.onrender.com/apphttps://assign-mentor-1ikw.onrender.com/app/mentors/edit-mentee/:id
 
 Write API to show all students for a particular mentor
-/mentors/find/:id
+https://assign-mentor-1ikw.onrender.com/app/mentors/find/:id
 
 Write an API to show the previously assigned mentor for a particular student.
-/students/find/:id
+https://assign-mentor-1ikw.onrender.com/app/students/find/:id
