@@ -25,3 +25,6 @@ https://assign-mentor-1ikw.onrender.com/app/mentors/find/:id
 
 Write an API to show the previously assigned mentor for a particular student.
 https://assign-mentor-1ikw.onrender.com/app/students/find/:id
+
+An API to update many unassigned students, now assigned to a particular Mentor 
+https://assign-mentor-1ikw.onrender.com/app/students/edit/many/:id
