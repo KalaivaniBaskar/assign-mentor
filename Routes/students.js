@@ -1,5 +1,5 @@
 import express from "express"; 
-import { postNewStudent, postNewMentor, getAllMentors, getAllStudents, getStudentsCount, getStudentById, getMentorById, getMentorsCount, editStudent, editMentor, getUnassignedStudents } from "../Controllers/students.js";
+import { postNewStudent, postNewMentor, getAllMentors, getAllStudents, getStudentsCount, getStudentById, getMentorById, getMentorsCount, editStudent, editMentor, getUnassignedStudents, updateStudentsMany } from "../Controllers/students.js";
 
 const router = express.Router(); 
 
@@ -86,6 +86,33 @@ const router = express.Router();
        res.status(500).json({message:"Internal server error","error":error})
     }
     })
+
+    //update many students
+  router.put('/students/edit/many/:id', async(req,res) => {
+   try{
+       console.log("editing students data");
+      const {id} = req.params;
+      const {target, assign} = req.body;
+      //console.log(target, assign);
+      if(!id || !target){
+          return res.status(400)
+          .json({message:"Wrong request"})
+      }
+      //const found =await getMentorById(id.trim()); 
+      //console.log(found);
+      //console.log(target,data);
+      const result = await updateStudentsMany(target,assign)
+      //console.log(result);
+      if(!result || !result.acknowledged || result.matchedCount !== target.length){
+         return res.status(400)
+         .json({message:"ERROR updating "})
+     }
+     res.status(200).json({UpdatedStudents : target, mentor:assign, status: result});
+   }
+   catch(error){
+      res.status(500).json({message:"Internal server error","error":error})
+   }
+   })
 
     /////////////////////MENTORS////////////////////
 

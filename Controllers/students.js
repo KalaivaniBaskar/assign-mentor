@@ -68,4 +68,10 @@ export function getUnassignedStudents(){
     .collection("students")
     .find({hasMentor:"false"})
     .toArray();
+} 
+export function updateStudentsMany(target,data){
+    return client
+    .db("zenb42")
+    .collection("students")
+    .updateMany({studentID:{$in:target}},{$set:{assigned_Mentor:data, hasMentor:"true"}});
 }
