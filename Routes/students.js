@@ -49,7 +49,7 @@ const router = express.Router();
        //get all students with no mentor assigned
     router.get("/students/all/unassigned", async(req,res) => {
        try{
-         const students = await getUnassignedStudents(req);
+         const students = await getUnassignedStudents(req.body);
          if(students.length===0){
                return res.status(400).json({message:"No student data available"})
          }
