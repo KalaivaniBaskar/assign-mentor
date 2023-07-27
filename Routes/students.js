@@ -105,7 +105,7 @@ const router = express.Router();
       //console.log(result);
       if(!result || !result.acknowledged || result.matchedCount !== target.length){
          return res.status(400)
-         .json({message:"ERROR updating "})
+         .json({message:"ERROR updating ",status:result})
      }
      res.status(200).json({UpdatedStudents : target, mentor:assign, status: result});
    }
